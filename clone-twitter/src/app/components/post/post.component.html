@@ -1,26 +1,15 @@
-<div class="w-[650px] bg-white 
+<div class="w-[650px] bg-white
 rounded-lg shadow p-6 mb-8">
-    <div class="flex 
+    <div class="flex
 justify-center
 w-full">
         <!-- Avatar -->
-        <div class="flex-shrink-0
-        mr-5">
-            <div class="curso-pointer
-            font-bold 
-            w-12 h-12 
-            bg-gray-300 flex
-            items-center
-            justify-center
-            rounded-full
-            ">
-                F
-            </div>
-        </div>
+        <app-avatar/>
         <!-- Formulario -->
         <div class="flex-1">
             <!-- textarea -->
-            <textarea [(ngModel)]="TweetMsg" (input)="ChangeTweet()" [maxlength]="TweetMaxLength" class="
+            <textarea (keyup.enter)="SendTweet()" [(ngModel)]="TweetMsg" (input)="ChangeTweet()"
+                [maxlength]="TweetMaxLength" class="
             mb-2
             bg-gray-200
             focus:outline-none
@@ -54,10 +43,10 @@ w-full">
                 </div>
                 <!-- Buttons -->
                 <div class="mt-5">
-                    <button (click)="SendTweet()" type="button" class="w-32 
+                    <button (click)="SendTweet()" type="button" class="w-32
                         focus:outline-none
                         border
-                        border-transparent py-2 px-5 
+                        border-transparent py-2 px-5
                         rounded-lg
                       bg-blue-500
                       hover:bg-blue-600
